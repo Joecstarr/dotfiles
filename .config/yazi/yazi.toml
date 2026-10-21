@@ -1,0 +1,183 @@
+[[fetchers]]
+id = "git"
+name = "*"
+run = "git"
+
+[[fetchers]]
+id = "git"
+name = "*/"
+run = "git"
+
+[[fetchers]]
+id = "mime"
+name = "*"
+prio = "high"
+run = "mime-ext"
+
+[manager]
+show_hidden = true
+
+[[open.rules]]
+mime = "application/json"
+use = "edit"
+
+[[open.rules]]
+mime = "text/markdown"
+use = "edit"
+
+[[open.rules]]
+mime = "text/plain"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-shellscript"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-python"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-go"
+use = "edit"
+
+[[open.rules]]
+mime = "text/css"
+use = "edit"
+
+[[open.rules]]
+mime = "text/javascript"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-c"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-c++"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-java"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-rust"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-yaml"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-toml"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-dockerfile"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-xml"
+use = "edit"
+
+[[open.rules]]
+mime = "text/x-php"
+use = "edit"
+
+[[open.rules]]
+mime = "image/png"
+use = "img"
+
+[[open.rules]]
+mime = "image/jpeg"
+use = "img"
+
+[[open.rules]]
+mime = "image/jpg"
+use = "img"
+
+[[open.rules]]
+mime = "image/webp"
+use = "img"
+
+[[open.rules]]
+mime = "image/gif"
+use = "brwsr"
+
+[[open.rules]]
+mime = "x-scheme-handler/http"
+use = "brwsr"
+
+[[open.rules]]
+mime = "x-scheme-handler/https"
+use = "brwsr"
+
+[[open.rules]]
+mime = "text/html"
+use = "brwsr"
+
+[[open.rules]]
+mime = "application/pdf"
+use = "pdf"
+
+[[open.rules]]
+mime = "x-scheme-handler/chrome"
+use = "brwsr"
+
+[[open.rules]]
+mime = "application/x-extension-htm"
+use = "brwsr"
+
+[[open.rules]]
+mime = "application/x-extension-html"
+use = "brwsr"
+
+[[open.rules]]
+mime = "application/x-extension-shtml"
+use = "brwsr"
+
+[[open.rules]]
+mime = "application/xhtml+xml"
+use = "brwsr"
+
+[[open.rules]]
+mime = "application/x-extension-xhtml"
+use = "brwsr"
+
+[[open.rules]]
+mime = "application/x-extension-xht"
+use = "brwsr"
+
+[[opener.brwsr]]
+for = "linux"
+orphan = true
+run = 'zen "$@"'
+
+[[opener.edit]]
+for = "linux"
+orphan = true
+run = '$EDITOR "$@"'
+
+[[opener.img]]
+for = "linux"
+orphan = true
+run = 'imv "$@"'
+
+[[opener.open]]
+desc = "Open"
+run = 'xdg-open "$@"'
+
+[[opener.pdf]]
+for = "linux"
+orphan = true
+run = 'zathura "$@"'
+
+[[opener.play]]
+for = "linux"
+orphan = true
+run = 'vlc "$@"'
+
+[preview]
+max_height = 1000
+max_width = 1000

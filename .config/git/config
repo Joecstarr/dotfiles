@@ -1,0 +1,89 @@
+[alias]
+	amend = "commit --amend"
+	branches = "branch -a"
+	deleted = "diff --name-only --diff-filter=D"
+	discard = "checkout --"
+	graph = "log --graph -10 --branches --remotes --tags  --"
+	lol = "log --graph --decorate --pretty=oneline --abbrev-commit"
+	lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
+	modified = "diff --name-only --diff-filter=M"
+	overwrite = "push --force-with-lease"
+	precommit = "diff --cached --diff-algorithm=minimal -w"
+	remotes = "remote -v"
+	rmb = "!git fetch -p ; git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -D"
+	rofl = "!git --no-pager log --decorate --pretty=oneline --abbrev-commit --color=always | nl | tac"
+	stashes = "stash list"
+	tags = "tag"
+	uncommit = "reset --mixed HEAD~"
+	undo = "reset HEAD~1 --mixed"
+	unmerged = "diff --name-only --diff-filter=U"
+	unstage = "reset -q HEAD --"
+
+[color]
+	branch = "auto"
+	diff = "auto"
+	interactive = "auto"
+	status = "auto"
+	ui = "1"
+
+[column]
+	ui = "auto"
+
+[commit]
+	verbose = true
+
+[core]
+	excludesfile = "~/.gitignore"
+
+[diff]
+	algorithm = "histogram"
+	colorMoved = "plain"
+	mnemonicPrefix = true
+	renames = true
+
+[fetch]
+	all = true
+	prune = true
+	pruneTags = true
+
+[gpg]
+	format = "openpgp"
+
+[gpg "openpgp"]
+	program = "/nix/store/0prm77nf3lpljd30wbvh7c3alv2glqc7-gnupg-2.4.9/bin/gpg"
+
+[help]
+	autocorrect = "prompt"
+
+[init]
+	defaultBranch = "main"
+
+[merge]
+	tool = "nvim"
+
+[mergetool "nvim"]
+	cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+	default = "simple"
+	followTags = true
+
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+
+[rerere]
+	autoupdate = true
+	enabled = true
+
+[tag]
+	sort = "version:refname"
+
+[user]
+	email = "joe@joe-starr.com"
+	name = "Joe Starr"
